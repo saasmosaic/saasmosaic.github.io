@@ -361,6 +361,17 @@ section {
   text-decoration: none;
 }
 
+.contact-phone {
+  margin-top: 1.25rem;
+  font-size: 1rem;
+  color: var(--muted);
+}
+
+.contact-phone a {
+  color: var(--ink-soft);
+  font-weight: 500;
+}
+
 /* ---------- Footer ---------- */
 
 .site-footer {
