@@ -224,7 +224,7 @@ section {
 
 .product-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  grid-template-columns: 1fr;
   gap: 24px;
 }
 
@@ -372,6 +372,125 @@ section {
   font-weight: 500;
 }
 
+/* ---------- Flagship product ---------- */
+
+.product-card--flagship {
+  grid-column: 1 / -1;
+  border-color: var(--accent);
+  border-width: 2px;
+  background: linear-gradient(180deg, var(--bg-elevated) 0%, var(--bg) 100%);
+}
+
+.product-flag {
+  display: inline-block;
+  background: var(--accent);
+  color: #ffffff;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  padding: 4px 10px;
+  border-radius: 4px;
+  margin: 0 6px 0.75rem 0;
+}
+
+.product-card--flagship h3 {
+  font-size: clamp(1.75rem, 3vw, 2.25rem);
+}
+
+.product-pitch {
+  font-size: clamp(1.05rem, 1.5vw, 1.25rem);
+  font-weight: 600;
+  color: var(--ink);
+  margin-bottom: 1rem;
+}
+
+@media (min-width: 768px) {
+  .product-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .product-flagship-body {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    gap: 32px;
+  }
+}
+
+/* ---------- Support ---------- */
+
+.support {
+  background: var(--bg);
+}
+
+.support-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  gap: 16px;
+}
+
+.support-row {
+  background: var(--bg-elevated);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.support-row--general {
+  background: transparent;
+  border-style: dashed;
+}
+
+.support-text h3 {
+  font-size: 1.1rem;
+}
+
+.support-text p {
+  margin: 0;
+  font-size: 0.95rem;
+}
+
+.support-actions {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 10px;
+  min-width: 0;
+}
+
+.support-actions .btn {
+  min-height: 44px;
+  max-width: 100%;
+  text-align: center;
+}
+
+.support-email {
+  font-weight: 500;
+  font-size: 0.95rem;
+  overflow-wrap: anywhere;
+  padding: 4px 0;
+}
+
+@media (min-width: 768px) {
+  .support-row {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: 32px;
+    padding: 24px 28px;
+  }
+
+  .support-actions {
+    align-items: flex-end;
+    flex-shrink: 0;
+  }
+}
+
 /* ---------- Footer ---------- */
 
 .site-footer {
@@ -431,5 +550,19 @@ section {
 
   .product-card {
     padding: 24px;
+  }
+}
+
+@media (max-width: 479px) {
+  .nav-optional {
+    display: none;
+  }
+
+  .nav {
+    gap: 16px;
+  }
+
+  .nav-links {
+    gap: 14px;
   }
 }
